@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Inicio Sesion</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/287857e823.js" crossorigin="anonymous"></script>
+</head>
+
+
+<script>
+    $(document).ready(function(){
+        $("#error").hide();
+
+        $("#formulario").submit(function(){
+            var mensaje ="";
+
+            if($("#nombreUsuario").val().trim().length==0){
+                mensaje = "La contraseña esta en blanco";
+            }
+            
+        	else if($("#contraseña").val().trim().length==0){
+                mensaje = "El nombre de usuario esta en blanco";
+            }
+            
+            if(mensaje !=""){
+                $("#error").html(mensaje);
+                $("#error").show();
+                event.preventDefault();
+            }
+
+            
+            
+        });
+    })
+</script>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="./InicioSesion.html">Tech Solution</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      
+    </ul>
+    
+  </div>
+</nav>
+
+<div class="container">
+	<div class="row">
+		<div style="width: 40%; margin: 25px auto;">
+		<h3 style="text-align: center;">Inicio Sesion Usuario</h3>
+		<form method="POST" action="procesar.php" id="formulario">
+			<div class="form-group">
+				<label>Nombre Usuario</label><input type="text" id="nombreUsuario" name="UserName" class="form-control" autofocus placeholder="username">
+			</div>
+			<div class="form-group">
+				<label>Contraseña:</label><input type="Password" id="contraseña" name="Password" class="form-control" autofocus placeholder="Password">
+			</div>
+
+
+      <div class="form-row">
+        
+      </div>
+
+	<div class="form-group">
+				<button class="btn btn-lg btn-success btn-block">Iniciar Sesion</button>
+			</div>
+
+			<div id="error" class="alert alert-danger" role="alert"></div>
+
+      <div class="mb-3"></div>
+        <div class="g-recaptcha" data-sitekey="6LfbT-8iAAAAAGYs1czxFshCL1T64kDT1LjhzJwP"></div>
+		</form>
+    <p>¿No tienes cuenta?<a href="">Crear Cuenta</a> </p>
+		<p>¿No te acuerdas de tu contraseña?<a href="">Recuperar contraseña</a> </p>
+	</div>
+</div>
+</div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</html>
+
+<!-- All rights reserved Techshenanigans -->
+<!-- Visit https://www.techshenanigans.com/  -->
+<!-- Write us at team@techshenanigans.com -->
