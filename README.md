@@ -1,2 +1,0 @@
-# PaginaTech
-Pagina SolutionTech
